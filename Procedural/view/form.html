@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content=
+        "width=device-width, initial-scale=1.0">
+  
+    <!-- CSS file -->
+    
+	<link rel="stylesheet" href="resources/css/stylerecaptcha.css">
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+
+<body>
+<div class="container">
+        <!-- HTML Form ../view/form.php 2022.tests.backhub.fr -->
+<!-- il est obligatoire d'utiliser  enctype="multipart/form-data" pour que le transfert de fichiers fonctionne -->
+<form method="post" action='../controler/sendemail.php' enctype="multipart/form-data">
+
+	<p><b>Mail<sup style="color:red">*</sup>:</b><br>
+	<input type="text" name="mail" value=""></p>
+	<p><b>Nom<sup style="color:red">*</sup>:</b><br>
+	<input type="text" name="nom" value=""></p>
+	<p><b>Prénom<sup style="color:red">*</sup>:</b><br>
+	<input type="text" name="prenom" value=""></p>
+	<p><b>Entreprise<sup style="color:red">*</sup>:</b><br>
+	<input type="text" name="entreprise" value=""></p>
+	<p><b>Téléphone<sup style="color:red">*</sup>:</b><br>
+	<input type="text" name="telephone" value=""></p>
+	<!--  pour la sécurité des clef tout html c'est pas top... :) -->
+	<input type="text" name="secret" value="6LeGjCojAAAAAKu449zg0fOsbjsnbZ5UTdZjBK1b" hidden></p> 
+	<!--  localhost 2022.tests.backhub.fr -->
+	<input type="text" name="websitename" value="localhost" hidden></p>
+	<!--  indiquer votre email pour recevoir une réponse à cette adresse -->
+	<input type="text" name="email_sender" value="xavier@institutsolacroup.com" hidden></p>
+	<!--  indiquer le sujet du email quue vous allez recevoir à votre adresse mail -->
+	<input type="text" name="email_subject" value="Nouveau Contact de backhub.fr " hidden></p>
+	
+	
+	<p><b>Message<sup style="color:red">*</sup>:</b><br>
+	<textarea name="message" cols="40" rows="20"></textarea></p>
+	
+	<p><b>Pièces jointes:</b><br>
+	<input type="file" name="fichiers[]">
+	</p><br>
+	<div class="g-recaptcha" data-sitekey="6LeGjCojAAAAAP6bYhafANfGn9as0wSXAdDre1_N">
+	
+   
+	
+	</div>
+	<input  class="g-recaptcha" type="submit" name="envoyer" value="envoyer" >
+	
+</form>
+</div>
+</body>
+    
+</html>
